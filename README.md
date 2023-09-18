@@ -1,6 +1,7 @@
 # apifirst_demo
 
 * Create objects with sample values as in sampledata.yaml in Yaml format.
+* Select the file in IntelliJ (Project window).
 * Call the OpenAPI CRUD Wizard in menu "Tools".
 * Edit the generated openapi.yaml in https://editor.swagger.io.
 * Download the OpenAPI generator jar with the script checkfiles.sh.
