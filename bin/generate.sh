@@ -1,19 +1,19 @@
 #!/bin/bash
 # Used also for artifactId and therefore must not contain uppercase or special characters.
-APP=petstorespringapifirst
+APP=DemoApp
 BASE=com.example
 VERSION=0.0.1
 JAR=$APP-$VERSION.jar
-YAML=openapi.yaml
+YAML=../openapi.yaml
 PACKAGE=basePackage=$BASE,invokerPackage=$BASE,apiPackage=$BASE.api,configPackage=$BASE.config,modelPackage=$BASE.model
 ADD=--additional-properties=artifactId=$APP,groupId=$BASE,$PACKAGE,artifactVersion=$VERSION,returnSuccessCode=false,skipDefaultInterface=false,sourceFolder=src/main/java,title=petstore,artifactDescription=PetstoreAPIFirstExample
 echo validate
-java -jar bin/openapi-generator-cli-6.2.1.jar validate -i ./$YAML
+java -jar ./openapi-generator-cli-6.2.1.jar validate -i ./$YAML
 echo rm -rf ./$APP/*
 echo and start generate...
 sleep 3
 rm -rf ./$APP/*
-java -jar bin/openapi-generator-cli-6.2.1.jar generate -i ./$YAML -g spring -o ./$APP/ $ADD
+java -jar ./openapi-generator-cli-6.2.1.jar generate -i ./$YAML -g spring -o ./$APP/ $ADD
 if [ ! $? -eq 0 ]; then
   echo "Error in: java -jar bin/openapi-generator-cli-6.2.1.jar -i ./$YAML -g spring -o ./output/$APP/ $ADD"
   exit 1
