@@ -4,7 +4,7 @@ Pet:
   price: 12.05
   status: "available"
   tags: [ dog,4paws ]
-  possiblerabatt: [10,15,20]
+  rabat: [10,15,20]
 Customer:
   firstname: John
   lastname: Doe
